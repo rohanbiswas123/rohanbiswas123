@@ -7,10 +7,10 @@ import datetime
 import os
 
 # insert your Telegram bot token here
-bot = telebot.TeleBot('7296492848:AAGqrNoFhR4h540PiNiX2F-eXG8QxD6LWWo')
+bot = telebot.TeleBot('7323995873:AAH8QtkNr5wwKZ-5FfBkPx1sOm0ZZGAu9AE')
 
 # Admin user IDs
-admin_id = ["6317314620"]
+admin_id = ["5496190244"]
 
 # File to store allowed user IDs
 USER_FILE = "users.txt"
@@ -223,8 +223,8 @@ def handle_bgmi(message):
         # Check if the user is in admin_id (admins have no cooldown)
         if user_id not in admin_id:
             # Check if the user has run the command before and is still within the cooldown period
-            if user_id in bgmi_cooldown and (datetime.datetime.now() - bgmi_cooldown[user_id]).seconds < 300:
-                response = "You Are On Cooldown ❌. Please Wait 5min Before Running The /bgmi Command Again."
+            if user_id in bgmi_cooldown and (datetime.datetime.now() - bgmi_cooldown[user_id]).seconds < 5:
+                response = "You Are On Cooldown ❌. Please Wait 10sec Before Running The /bgmi Command Again."
                 bot.reply_to(message, response)
                 return
             # Update the last time the user ran the command
@@ -285,8 +285,8 @@ def show_help(message):
 🤖 To See Admin Commands:
 💥 /admincmd : Shows All Admin Commands.
 
-Buy From :- @ROHANBGMIMODS
-Official Channel :- 
+Buy From :- @ANASCRACKOWNER
+Official Channel :- https://t.me/ANASBHAIOP1
 '''
     for handler in bot.message_handlers:
         if hasattr(handler, 'commands'):
@@ -303,7 +303,7 @@ def welcome_start(message):
     user_name = message.from_user.first_name
     response = f'''👋🏻Welcome to Your Home, {user_name}! Feel Free to Explore.
 🤖Try To Run This Command : /help 
-✅Join :- https://t.me/+IkQF53aLtL41NjE9'''
+✅Join :- https://t.me/ANASBHAIOP1'''
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['rules'])
